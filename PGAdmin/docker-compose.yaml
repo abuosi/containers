@@ -1,0 +1,19 @@
+version: '3.8'
+
+networks:
+  pgadmin:
+    driver: bridge
+
+services:
+  pgadmin:
+    image: dpage/pgadmin4
+    networks:
+      - pgadmin
+    ports:
+      - "80:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin
+      - PGADMIN_DEFAULT_PASSWORD=Admin123
+    volumes:
+      - ./volume/pgadmin:/var/lib/pgadmin
+

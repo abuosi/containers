@@ -1,0 +1,20 @@
+version: '3.8'
+
+networks:
+  postgres:
+    driver: bridge
+
+services:
+  postgres:
+    image: postgres
+    networks:
+      - postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres123
+      - POSTGRES_DB=abuosi
+    volumes:
+      - ./volume/postgresql:/var/lib/postgresql
+      - ./volume/postgresql_data:/var/lib/postgresql/data
