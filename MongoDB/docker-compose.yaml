@@ -3,12 +3,10 @@ services:
   mongodb_container:
     image: mongo:latest
     environment:
-      MONGO_INITDB_DATBASE: my-database
-      MONGO_INITDB_ROOT_USERNAME: mongo
-      MONGO_INITDB_ROOT_PASSWORD: Mongo@123
+      MONGO_INITDB_DATABASE: my_database
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: MongoAdmin
     ports:
       - 27017:27017
     volumes:
       - ./volume:/data/db
-volumes:
-  mongodb_data_container:
